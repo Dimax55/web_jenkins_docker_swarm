@@ -6,10 +6,8 @@ pipeline {
             steps {
                 script {
                     // Запуск контейнера Nginx
-                    docker run -d -p 8099:80 --name mynginx \
-                    -v ./index.html:/usr/share/nginx/html/index.html \
-                    nginx:alpine
-
+                    docker build .
+                    docker run -d -p 8081:80 dimax555/19.05.jenkins-web
                     )
                 }
             }
