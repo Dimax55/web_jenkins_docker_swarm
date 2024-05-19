@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Запуск контейнера Nginx
                     docker build .
-                    docker run -d -p 8081:80 --name dimax555/19.05.jenkins-web
+                    docker run -d -p 8181:80 
                     )
                 }
             }
