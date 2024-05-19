@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build and run Nginx container') {
+            steps {
+                script {
+                    // Запуск контейнера Nginx
+                    docker.image('nginx:alpine').run(
+                        '-d -p 8080:80 --name mynginx -v /повний/шлях/до/вашого/index.html:/usr/share/nginx/html/index.html'
+                    )
+                }
+            }
+        }
+    }
+}
