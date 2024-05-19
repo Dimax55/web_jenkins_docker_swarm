@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Запуск контейнера Nginx
                     docker.image('nginx:alpine').run(
-                        '-d -p 8080:80 --name mynginx -v /повний/шлях/до/вашого/index.html:/usr/share/nginx/html/index.html'
+                        '-d -p 8080:80 --name mynginx -v ./index.html:/usr/share/nginx/html/index.html'
                     )
                 }
             }
