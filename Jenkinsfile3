@@ -1,11 +1,10 @@
-
-    
+ 
     stages {
         stage('Build and run Nginx container') {
             steps {
                 script {
                     // Збираємо Docker імедж за допомогою Dockerfile в поточній директорії
-                    sh 'docker build .'
+                    sh 'docker build -t mynginx .'
                     
                     // Запускаємо контейнер Nginx на порту 8181
                     sh 'docker run -d -p 8181:80 --name mynginx mynginx'
