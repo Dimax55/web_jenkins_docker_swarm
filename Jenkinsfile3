@@ -6,8 +6,10 @@ pipeline {
             steps {
                 script {
                     // Запуск контейнера Nginx
-                    docker.image('nginx:alpine').run(
-                        '-d -p 8080:80 --name mynginx -v ./index.html:/usr/share/nginx/html/index.html'
+                    docker run -d -p 8080:80 --name mynginx \
+                    -v ./index.html:/usr/share/nginx/html/index.html \
+                    nginx:alpine
+
                     )
                 }
             }
