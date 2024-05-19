@@ -6,7 +6,7 @@ pipeline {
         DOCKER_HUB_CREDENTIALS = '5e72dcd7-bf1a-4638-8b0f-a231dfd0f561'
         GIT_REPO = 'git@github.com:Dimax55/web_jenkins_docker_swarm.git'
         GIT_BRANCH = 'main'
-        CONTAINER_PORT = '8090' // Порт, на який буде прокинуто контейнер
+        CONTAINER_PORT = '8081' // Порт, на який буде прокинуто контейнер
     }
 
     stages {
