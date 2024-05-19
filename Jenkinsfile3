@@ -1,7 +1,15 @@
  
+
+pipeline {
+
+   
+
     stages {
-        stage('Build and run Nginx container') {
-            steps {
+        
+        
+
+
+                    steps {
                 script {
                     // Збираємо Docker імедж за допомогою Dockerfile в поточній директорії
                     sh 'docker build -t mynginx .'
@@ -10,5 +18,5 @@
                     sh 'docker run -d -p 8181:80 --name mynginx mynginx'
                 }
             }
-        }
+    }
 }
