@@ -27,8 +27,6 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    // sh 'echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin'
-                    // sh 'docker push ${DOCKER_HUB_REPO}'/*
                     withCredentials([usernamePassword(credentialsId: "${env.DOCKER_HUB_CREDENTIALS}", usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
                         sh "echo \$DOCKER_HUB_PASSWORD | docker login -u \$DOCKER_HUB_USERNAME --password-stdin"
                         sh "docker push ${env.DOCKER_HUB_REPO}"
